@@ -30,9 +30,9 @@ for l in range(20):
     elapsed_time = end_time - start_time
     eltime_loop.append(elapsed_time)
 
+
 meantime = np.mean(eltime_loop)
 stdtime = np.std(eltime_loop)
-
 
 print(c[-1])
 print(meantime)

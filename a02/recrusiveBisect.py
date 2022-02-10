@@ -5,8 +5,15 @@ def f(x):
     return np.exp(x) - 4
 
 # define Bisection method
+    # function is the problem you want to solve
+    # x_low, x_high define the section
+    # errot is error range
 def bisecRecrusive(function, x_low, x_high, error):
-    count = 1
+    count = 1 # counter
+
+    if f(x_low) * f(x_high) >= 0:
+        print("Error: section you defined is not valid")
+        quit()
 
     while(True):
         x_half = (x_high + x_low)/2
