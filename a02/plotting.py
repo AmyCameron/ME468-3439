@@ -31,6 +31,8 @@ ax1.plot(x, time_loop_11)
 ax1.plot(x, time_loop_12)
 ax1.plot(x, time_loop_13)
 plt.title("double loop",fontsize=12)
+
+
 plt.xticks(x, x)
 plt.xlabel("number of trial",fontsize=10)
 plt.ylabel("time",fontsize=12)
@@ -55,3 +57,4 @@ plt.xlabel("number of trial",fontsize=10)
 plt.ylabel("time",fontsize=12)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0, fontsize=8)
 plt.show()
+

@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 # given values
 M = 1000
 m = M/4
@@ -13,15 +12,16 @@ g = 10
 # range
 t = 0
 t_fin = 5
-# ie-4 stepsize
-dt = 0.0001 
+
+# step size
+dt = 0.0001
 # iteration
-itr = int(t_fin/dt) 
+itr = int(t_fin/dt)
 
 # initial position
-u_old = 0.4 
+u_old = 0.4
 # initial velocity
-v_old = 0 
+v_old = 0
 
 # initializing lists for plotting
 ut = []
@@ -31,6 +31,7 @@ e_pos_4 = []
 e_vel_4 = []
 
 # analytical solution
+
 def msd_ode(t):
     y = np.exp(-8*t) * ((7/20)*np.cos(np.sqrt(34)*t*2) + (56*np.sqrt(34)/1360)*np.sin(np.sqrt(34)*t*2)) + (1/20)
     return y
@@ -39,13 +40,14 @@ for i in range(itr):
     # counter
     t = dt * i
 
-    # forward euler
-    u = u_old + (v_old * dt)
-    v = v_old + dt * (g - ((k_s/m)*(u_old)) - ((c_s/m) * v_old))
+    # backward Euler
+    v = ( v_old + dt * (g - ((k_s/m)*(u_old))) ) / ( 1 + (16 * dt) )
+    u = u_old + (v * dt)
+    v = v_old + dt * (g - ((k_s/m)*u) - ((c_s/m) * v))
     
     # analytical solution
-    ph = msd_ode(t)
-    
+    ph = msd_ode(t) #hand
+
     # updating lists
     ut.append(u)
     tt.append(t)
