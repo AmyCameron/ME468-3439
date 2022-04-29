@@ -1,0 +1,141 @@
+[0.270s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'py_pubsub']
+[0.271s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fa8d7a07a30>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=['py_pubsub'], packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=2, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fa8d7a07a30>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fa8d7a07fa0>)
+[0.315s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.319s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.321s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.322s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.323s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.324s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.325s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.364s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extensions ['ignore', 'ignore_ament_install']
+[0.375s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extension 'ignore'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extension 'ignore_ament_install'
+[0.380s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extensions ['colcon_pkg']
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extension 'colcon_pkg'
+[0.385s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extensions ['colcon_meta']
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extension 'colcon_meta'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extensions ['ros']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extension 'ros'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extensions ['cmake', 'python']
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extension 'cmake'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extension 'python'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extensions ['python_setup_py']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07) by extension 'python_setup_py'
+[0.402s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/build) by extensions ['ignore', 'ignore_ament_install']
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/build) by extension 'ignore'
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/build) ignored
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/install) by extensions ['ignore', 'ignore_ament_install']
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/install) by extension 'ignore'
+[0.408s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/install) ignored
+[0.416s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/log) by extensions ['ignore', 'ignore_ament_install']
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/log) by extension 'ignore'
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/log) ignored
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/py_pubsub) by extensions ['ignore', 'ignore_ament_install']
+[0.421s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/py_pubsub) by extension 'ignore'
+[0.423s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/py_pubsub) by extension 'ignore_ament_install'
+[0.426s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/py_pubsub) by extensions ['colcon_pkg']
+[0.427s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/py_pubsub) by extension 'colcon_pkg'
+[0.429s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/py_pubsub) by extensions ['colcon_meta']
+[0.430s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/py_pubsub) by extension 'colcon_meta'
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/py_pubsub) by extensions ['ros']
+[0.432s] Level 1:colcon.colcon_core.package_identification:_identify(Assignment07/py_pubsub) by extension 'ros'
+[0.443s] DEBUG:colcon.colcon_core.package_identification:Package 'Assignment07/py_pubsub' with type 'ros.ament_python' and name 'py_pubsub'
+[0.447s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.448s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.463s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.465s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.466s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.467s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.468s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.469s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.471s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.471s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.498s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_args' from command line to 'None'
+[0.500s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_target' from command line to 'None'
+[0.501s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.502s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_clean_cache' from command line to 'False'
+[0.503s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_clean_first' from command line to 'False'
+[0.504s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_force_configure' from command line to 'False'
+[0.505s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'ament_cmake_args' from command line to 'None'
+[0.506s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'catkin_cmake_args' from command line to 'None'
+[0.507s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.508s] DEBUG:colcon.colcon_core.verb:Building package 'py_pubsub' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub', 'merge_install': False, 'path': '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub', 'symlink_install': False, 'test_result_base': None}
+[0.539s] WARNING:colcon.colcon_core.verb:Some selected packages are already built in one or more underlay workspaces:
+	'py_pubsub' is in: /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding py_pubsub
+
+This may be promoted to an error in a future release of colcon-core.
+[0.545s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.554s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.559s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub' with build type 'ament_python'
+[0.564s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_pubsub', 'ament_prefix_path')
+[0.574s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.578s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/hook/ament_prefix_path.ps1'
+[0.606s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/hook/ament_prefix_path.dsv'
+[0.620s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/hook/ament_prefix_path.sh'
+[0.642s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.645s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.424s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub'
+[1.427s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.428s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.205s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub': PYTHONPATH=/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/build install --prefix /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub --record /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/install.log --single-version-externally-managed
+[5.528s] Level 1:colcon.colcon_core.environment:checking '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub' for CMake module files
+[5.532s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub' returned '0': PYTHONPATH=/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/build install --prefix /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub --record /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/install.log --single-version-externally-managed
+[5.573s] Level 1:colcon.colcon_core.environment:checking '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub' for CMake config files
+[5.641s] Level 1:colcon.colcon_core.environment:checking '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib'
+[5.650s] Level 1:colcon.colcon_core.environment:checking '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/bin'
+[5.658s] Level 1:colcon.colcon_core.environment:checking '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/pkgconfig/py_pubsub.pc'
+[5.662s] Level 1:colcon.colcon_core.environment:checking '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/python3.8/site-packages'
+[5.665s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_pubsub', 'pythonpath')
+[5.668s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/hook/pythonpath.ps1'
+[5.687s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/hook/pythonpath.dsv'
+[5.696s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/hook/pythonpath.sh'
+[5.708s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(py_pubsub)
+[5.711s] INFO:colcon.colcon_core.shell:Creating package script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/package.ps1'
+[5.725s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/package.dsv'
+[5.736s] INFO:colcon.colcon_core.shell:Creating package script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/package.sh'
+[5.748s] INFO:colcon.colcon_core.shell:Creating package script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/package.bash'
+[5.768s] INFO:colcon.colcon_core.shell:Creating package script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/py_pubsub/package.zsh'
+[5.789s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/share/colcon-core/packages/py_pubsub)
+[5.826s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.829s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.842s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.843s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.918s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[5.929s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.938s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.949s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.967s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[5.972s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.975s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/local_setup.ps1'
+[5.999s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/_local_setup_util_ps1.py'
+[6.018s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/setup.ps1'
+[6.037s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/local_setup.sh'
+[6.093s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/_local_setup_util_sh.py'
+[6.128s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/setup.sh'
+[6.152s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/local_setup.bash'
+[6.183s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/setup.bash'
+[6.206s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/local_setup.zsh'
+[6.218s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/setup.zsh'

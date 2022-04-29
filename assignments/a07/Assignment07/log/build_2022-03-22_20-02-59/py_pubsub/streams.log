@@ -1,0 +1,23 @@
+[2.710s] Invoking command in '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub': PYTHONPATH=/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/py_pubsub build --build-base /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/build install --prefix /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub --record /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/install.log --single-version-externally-managed
+[3.582s] running egg_info
+[3.601s] writing ../build/py_pubsub/py_pubsub.egg-info/PKG-INFO
+[3.621s] writing dependency_links to ../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt
+[3.634s] writing entry points to ../build/py_pubsub/py_pubsub.egg-info/entry_points.txt
+[3.644s] writing requirements to ../build/py_pubsub/py_pubsub.egg-info/requires.txt
+[3.659s] writing top-level names to ../build/py_pubsub/py_pubsub.egg-info/top_level.txt
+[3.824s] package init file 'py_pubsub/__init__.py' not found (or not a regular file)
+[3.830s] reading manifest file '../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[3.845s] writing manifest file '../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[3.865s] running build
+[3.880s] running build_py
+[3.886s] running install
+[3.926s] running install_lib
+[3.944s] warning: install_lib: '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/build/lib' does not exist -- no Python modules to install
+[3.954s] 
+[3.975s] running install_data
+[3.997s] running install_egg_info
+[4.009s] removing '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info' (and everything under it)
+[4.027s] Copying ../build/py_pubsub/py_pubsub.egg-info to /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info
+[4.228s] running install_scripts
+[4.369s] writing list of installed files to '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/install.log'
+[4.429s] Invoked command in '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub' returned '0': PYTHONPATH=/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/py_pubsub build --build-base /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/build install --prefix /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub --record /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/install.log --single-version-externally-managed

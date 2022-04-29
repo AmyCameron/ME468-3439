@@ -1,0 +1,78 @@
+[0.000000] (-) TimerEvent: {}
+[0.005463] (py_pubsub) JobQueued: {'identifier': 'py_pubsub', 'dependencies': OrderedDict()}
+[0.008049] (py_pubsub) JobStarted: {'identifier': 'py_pubsub'}
+[0.096463] (-) TimerEvent: {}
+[0.198790] (-) TimerEvent: {}
+[0.301838] (-) TimerEvent: {}
+[0.405163] (-) TimerEvent: {}
+[0.507063] (-) TimerEvent: {}
+[0.613381] (-) TimerEvent: {}
+[0.715368] (-) TimerEvent: {}
+[0.817811] (-) TimerEvent: {}
+[0.920570] (-) TimerEvent: {}
+[1.022620] (-) TimerEvent: {}
+[1.124009] (-) TimerEvent: {}
+[1.225765] (-) TimerEvent: {}
+[1.327475] (-) TimerEvent: {}
+[1.433480] (-) TimerEvent: {}
+[1.536813] (-) TimerEvent: {}
+[1.638794] (-) TimerEvent: {}
+[1.741881] (-) TimerEvent: {}
+[1.844625] (-) TimerEvent: {}
+[1.947335] (-) TimerEvent: {}
+[2.054902] (-) TimerEvent: {}
+[2.164338] (-) TimerEvent: {}
+[2.267510] (-) TimerEvent: {}
+[2.369419] (-) TimerEvent: {}
+[2.476681] (-) TimerEvent: {}
+[2.584245] (-) TimerEvent: {}
+[2.685856] (-) TimerEvent: {}
+[2.787235] (-) TimerEvent: {}
+[2.888473] (-) TimerEvent: {}
+[2.922607] (py_pubsub) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../build/py_pubsub', 'build', '--build-base', '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/build', 'install', '--prefix', '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub', '--record', '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/install.log', '--single-version-externally-managed'], 'cwd': '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub', 'env': {'NV_LIBCUBLAS_VERSION': '11.4.2.10064-1', 'CHRONO_DATA_DIR': '/home/me468/chrono/build/data/', 'NV_CUDA_COMPAT_PACKAGE': 'cuda-compat-11-3', 'HOSTNAME': '0df73a3603dd', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/me468/autonomy_stack/install/custom_msgs/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/lib/x86_64-linux-gnu:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/me468/chrono/build/lib', 'NV_LIBNCCL_PACKAGE_VERSION': '2.9.6-1', 'HOME': '/home/amyk', 'OLDPWD': '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub', 'ROS_PYTHON_VERSION': '3', 'LC_CTYPE': 'C.UTF-8', 'NV_LIBNPP_PACKAGE': 'libnpp-11-3=11.3.3.44-1', 'CUDA_VERSION': '11.3.0', 'DISPLAY_HEIGHT': '768', 'COLCON_PREFIX_PATH': '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install:/home/me468/autonomy_stack/install', 'ROS_DISTRO': 'galactic', 'NV_LIBCUBLAS_PACKAGE_NAME': 'libcublas-11-3', 'NVIDIA_REQUIRE_CUDA': 'cuda>=11.3 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=440,driver<441 driver>=450', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NV_LIBCUSPARSE_VERSION': '11.5.0.58-1', 'NVIDIA_DRIVER_CAPABILITIES': 'compute,utility', 'NV_CUDA_LIB_VERSION': '11.3.0-1', 'NV_LIBNCCL_PACKAGE_NAME': 'libnccl2', 'TERM': 'xterm', 'NV_CUDA_CUDART_VERSION': '11.3.58-1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/galactic/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'NV_LIBCUBLAS_PACKAGE': 'libcublas-11-3=11.4.2.10064-1', 'NVARCH': 'x86_64', 'DISPLAY': ':0.0', 'NV_LIBNCCL_PACKAGE': 'libnccl2=2.9.6-1+cuda11.3', 'NV_ML_REPO_URL': 'https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64', 'AMENT_PREFIX_PATH': '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub:/home/me468/autonomy_stack/install/control_stack:/home/me468/autonomy_stack/install/custom_msgs:/opt/ros/galactic', 'NV_NVTX_VERSION': '11.3.58-1', 'NV_LIBNPP_VERSION': '11.3.3.44-1', 'PWD': '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub', 'DISPLAY_WIDTH': '1024', 'PYTHONPATH': '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages:/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages:/home/me468/autonomy_stack/install/control_stack/lib/python3.8/site-packages:/home/me468/autonomy_stack/install/custom_msgs/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages::/home/me468/chrono/build/bin', 'NVIDIA_VISIBLE_DEVICES': 'all', 'NCCL_VERSION': '2.9.6-1', 'COLCON': '1', 'NV_ML_REPO_ENABLED': '1', 'CMAKE_PREFIX_PATH': '/home/me468/autonomy_stack/install/custom_msgs'}, 'shell': False}
+[2.988845] (-) TimerEvent: {}
+[3.091664] (-) TimerEvent: {}
+[3.196400] (-) TimerEvent: {}
+[3.298370] (-) TimerEvent: {}
+[3.401625] (-) TimerEvent: {}
+[3.421748] (py_pubsub) StdoutLine: {'line': b'running egg_info\n'}
+[3.429890] (py_pubsub) StdoutLine: {'line': b'writing ../build/py_pubsub/py_pubsub.egg-info/PKG-INFO\n'}
+[3.436390] (py_pubsub) StdoutLine: {'line': b'writing dependency_links to ../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt\n'}
+[3.444356] (py_pubsub) StdoutLine: {'line': b'writing entry points to ../build/py_pubsub/py_pubsub.egg-info/entry_points.txt\n'}
+[3.450932] (py_pubsub) StdoutLine: {'line': b'writing requirements to ../build/py_pubsub/py_pubsub.egg-info/requires.txt\n'}
+[3.459830] (py_pubsub) StdoutLine: {'line': b'writing top-level names to ../build/py_pubsub/py_pubsub.egg-info/top_level.txt\n'}
+[3.545299] (-) TimerEvent: {}
+[3.647306] (-) TimerEvent: {}
+[3.671476] (py_pubsub) StdoutLine: {'line': b"reading manifest file '../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'\n"}
+[3.697904] (py_pubsub) StdoutLine: {'line': b"writing manifest file '../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'\n"}
+[3.706333] (py_pubsub) StdoutLine: {'line': b'running build\n'}
+[3.715438] (py_pubsub) StdoutLine: {'line': b'running build_py\n'}
+[3.737534] (py_pubsub) StdoutLine: {'line': b'creating /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/build\n'}
+[3.770182] (-) TimerEvent: {}
+[3.772158] (py_pubsub) StdoutLine: {'line': b'creating /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/build/lib\n'}
+[3.790391] (py_pubsub) StdoutLine: {'line': b'creating /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/build/lib/py_pubsub\n'}
+[3.796775] (py_pubsub) StdoutLine: {'line': b'copying py_pubsub/__init__.py -> /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/build/lib/py_pubsub\n'}
+[3.812447] (py_pubsub) StdoutLine: {'line': b'running install\n'}
+[3.828725] (py_pubsub) StdoutLine: {'line': b'running install_lib\n'}
+[3.843687] (py_pubsub) StdoutLine: {'line': b'creating /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub\n'}
+[3.855554] (py_pubsub) StdoutLine: {'line': b'copying /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/build/lib/py_pubsub/__init__.py -> /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub\n'}
+[3.870563] (-) TimerEvent: {}
+[3.891138] (py_pubsub) StdoutLine: {'line': b'byte-compiling /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub/__init__.py to __init__.cpython-38.pyc\n'}
+[3.912735] (py_pubsub) StdoutLine: {'line': b'running install_data\n'}
+[3.929013] (py_pubsub) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.941023] (py_pubsub) StdoutLine: {'line': b"removing '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[3.970775] (-) TimerEvent: {}
+[3.979129] (py_pubsub) StdoutLine: {'line': b'Copying ../build/py_pubsub/py_pubsub.egg-info to /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info\n'}
+[4.071404] (-) TimerEvent: {}
+[4.174124] (-) TimerEvent: {}
+[4.258072] (py_pubsub) StdoutLine: {'line': b'running install_scripts\n'}
+[4.284280] (-) TimerEvent: {}
+[4.389896] (-) TimerEvent: {}
+[4.395931] (py_pubsub) StdoutLine: {'line': b'Installing listener script to /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/py_pubsub\n'}
+[4.428450] (py_pubsub) StdoutLine: {'line': b'Installing talker script to /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/install/py_pubsub/lib/py_pubsub\n'}
+[4.464340] (py_pubsub) StdoutLine: {'line': b"writing list of installed files to '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/build/py_pubsub/install.log'\n"}
+[4.490372] (-) TimerEvent: {}
+[4.498382] (py_pubsub) CommandEnded: {'returncode': 0}
+[4.591017] (-) TimerEvent: {}
+[4.655946] (py_pubsub) JobEnded: {'identifier': 'py_pubsub', 'rc': 0}
+[4.674481] (-) EventReactorShutdown: {}

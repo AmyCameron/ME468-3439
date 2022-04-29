@@ -1,0 +1,25 @@
+[2.216s] Invoking command in '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub': PYTHONPATH=/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/build install --prefix /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub --record /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/install.log --single-version-externally-managed
+[2.699s] running egg_info
+[2.704s] writing ../../build/py_pubsub/py_pubsub.egg-info/PKG-INFO
+[2.711s] writing dependency_links to ../../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt
+[2.718s] writing entry points to ../../build/py_pubsub/py_pubsub.egg-info/entry_points.txt
+[2.725s] writing requirements to ../../build/py_pubsub/py_pubsub.egg-info/requires.txt
+[2.729s] writing top-level names to ../../build/py_pubsub/py_pubsub.egg-info/top_level.txt
+[2.814s] reading manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[2.832s] writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[2.843s] running build
+[2.853s] running build_py
+[2.863s] copying py_pubsub/publisher_member_function.py -> /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/build/lib/py_pubsub
+[2.886s] running install
+[2.892s] running install_lib
+[2.898s] copying /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/build/lib/py_pubsub/publisher_member_function.py -> /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub
+[2.910s] byte-compiling /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub/publisher_member_function.py to publisher_member_function.cpython-38.pyc
+[2.928s] running install_data
+[2.935s] running install_egg_info
+[2.955s] removing '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info' (and everything under it)
+[2.992s] Copying ../../build/py_pubsub/py_pubsub.egg-info to /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/python3.8/site-packages/py_pubsub-0.0.0-py3.8.egg-info
+[3.177s] running install_scripts
+[3.220s] Installing listener script to /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/py_pubsub
+[3.239s] Installing talker script to /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/py_pubsub
+[3.284s] writing list of installed files to '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/install.log'
+[3.348s] Invoked command in '/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/Assignment07/py_pubsub' returned '0': PYTHONPATH=/home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/build install --prefix /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/install/py_pubsub --record /home/amyk/Dropbox/UW-Madison/ME468/ME468-3439/assignments/a07/build/py_pubsub/install.log --single-version-externally-managed
