@@ -36,8 +36,7 @@ class Dijkstra:
         goalnode = self.graphNode(self.calc_xy_index(gx, self.area_min_x), self.calc_xy_index(gy, self.area_min_y),0,-1)
         
         open, close = dict(), dict()
-        startnode_index = (startnode.index_y - self.area_min_y) * self.x_width + (startnode.index_x - self.area_min_x) 
-        open[startnode_index] = startnode
+        open[self.calc_index(startnode)] = startnode
 
         while 1:
             c_id = min(open, key=lambda o: open[o].cost)
@@ -54,10 +53,8 @@ class Dijkstra:
             close[c_id] = current
 
             for plus_x,plus_y,plus_cost in self.node_around:
-                nextnode = (current.index_x + plus_x, current.index_y + plus_y, current.cost + plus_cost, c_id)
-                # n_id = self.calc_index(nextnode)
-                n_id = (nextnode.index_y - self.area_min_y) * self.x_width + (nextnode.index_x - self.area_min_x) 
-
+                nextnode = self.graphNode(current.index_x + plus_x, current.index_y + plus_y, current.cost + plus_cost, c_id)
+                n_id = self.calc_index(nextnode)
                 if n_id in close:
                     continue
 
@@ -76,13 +73,13 @@ class Dijkstra:
             
 
     def finalresult(self, goalnode,close):
-        fr_x, fr_y = [self.calc_position(goalnode.x, self.min_x)], [self.calc_position(goalnode.y, self.min_y)]
-        parent_index = goalnode.parent_index
+        fr_x, fr_y = [self.calc_position(goalnode.index_x, self.area_min_x)], [self.calc_position(goalnode.index_y, self.area_min_y)]
+        parent_index = goalnode.parent
         while parent_index != -1:
             n = close[parent_index]
-            fr_x.append(self.calc_position(n.x, self.min_x))
-            fr_y.append(self.calc_position(n.y, self.min_y))
-            parent_index = n.parent_index
+            fr_x.append(self.calc_position(n.index_x, self.area_min_x))
+            fr_y.append(self.calc_position(n.index_y, self.area_min_y))
+            parent_index = n.parent
         return fr_x, fr_y    
  
     def calc_position(self, index, minp):
@@ -106,8 +103,8 @@ class Dijkstra:
 
         return True
 
-    # def calc_index(self, node):
-    #    return (node.index_y - self.area_min_y) * self.x_width + (node.index_x - self.area_min_x)
+    def calc_index(self, node):
+        return (node.index_y - self.area_min_y) * self.x_width + (node.index_x - self.area_min_x)
 
     def generate_obstaclemap(self, ox, oy):
         self.x_width = round((self.area_max_x - self.area_min_x ) / self.graph_resolution)
