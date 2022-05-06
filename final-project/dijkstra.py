@@ -3,129 +3,135 @@ from asyncio import start_unix_server
 import math
 import random
 #from numpy import append
-print("OK")
-
-# initial settings
-
-start_x = 0.0
-start_y = 0.0
-
-goal_x = 50.0
-goal_y = 0.0
-
-open = dict()
-close = dict()
-
-obstacle_map = []
-
-graph_resolution = 2.0
-vehicle_radius = 1.0
-
-# define area
-min_x = -500
-min_y = -500
-max_x = 500
-max_y = 500
-
-x_width = round((max_x - min_x) / graph_resolution)
-y_width = round((max_y - min_y) / graph_resolution)
-
-obstacle_map = [[False for _ in range(x_width)] for _ in range(y_width)]
-ox, oy = [], []
 
 
-
-class graphNode:
-    def __init__(self,index_x,index_y,cost,parent):
-        self.index_x = index_x 
-        self.index_y = index_y
-        self.cost = cost
-        self.parent = parent
-
-def calc_position(index, minp):
-    pos = index * graph_resolution + minp
-    return pos
-
-def calc_xy_index(position, minp):
-    return round((position - minp) / graph_resolution)
-
-def calc_index(node):
-    node = graphNode
-    return (node.index_y - min_y) * x_width + (node.index_x - min_x)
-
-def verifynode(node):
-    if node.index_x < min_x:
-        return False
-    if node.index_y < min_y:
-        return False
-    if node.index_x > max_x:
-        return False
-    if node.index_y > max_y:
-        return False
-    if obstacle_map[node.index_x][node.index_y]:
-        return False
-
-    return True
+class dijkstra:
+    def __init__(self, area_max_x, area_max_y, area_min_x, area_min_y, graphresolusion, vehiclesize):
+        # define enviroment area
+        self.area_max_x = 500
+        self.area_max_y = 500
+        self.area_min_x = - 500
+        self.area_min_y = - 500
+        # scaling
+        self.graph_resolution = 20
+        self.vehiclesize = 10
+        # list
+        self.obstacle_map = []
+        # scaling
+        self.x_width = round((self.area_max_x - self.area_min_x ) / self.graph_resolution)
+        self.y_width = round((self.area_max_y  - self.area_min_y ) / self.graph_resolution)
+        self.obstacle_map = [[False for _ in range(self.x_width)] for _ in range(self.y_width)]
+        ox, oy = [], []
+        self.node_around = []
 
 
-for i in range(100):
-    random.seed(10)
-    ox.append(random.uniform(-500,500))
-    oy.append(random.uniform(-500,500))
+    class graphNode:
+        def __init__(self,index_x,index_y,cost,parent):
+            self.index_x = index_x 
+            self.index_y = index_y
+            self.cost = cost
+            self.parent = parent
 
+    def planning(self,sx,sy,gx,gy):
 
-for ix in range(x_width):
-    x = calc_position(ix, min_x)
-    for iy in range(y_width):
-        y = calc_position(iy, min_y)
-        for iox,ioy in zip(ox,oy):
-            d = math.hypot(iox - x, ioy - y)
-            if d <= vehicle_radius:
-                obstacle_map[ix][iy] = True
+        open, close = dict(), dict()
+
+        startnode = self.graphNode(self.calc_xy_index(sx, self.area_min_x), self.calc_xy_index(sy, self.area_min_y),0,-1)
+        goalnode = self.graphNode(self.calc_xy_index(gx, self.area_min_x), self.calc_xy_index(gy, self.area_min_y),0,-1)
+        open[self.calc_index(startnode)] = startnode
+
+        while 1:
+            c_id = min(open, key=lambda o: open[o].cost)
+            current = open[c_id]
+
+            if current.index_x == goalnode.index_x and current.index_y == goalnode.index_y:
+                goalnode.cost = current.cost
+                goalnode.parent = current.parent
                 break
 
-node_around = [[1, 0, 1],
-                [0, 1, 1],
-                [-1, 0, 1],
-                [0, -1, 1],
-                [-1, -1, math.sqrt(2)],
-                [-1, 1, math.sqrt(2)],
-                [1, -1, math.sqrt(2)],
-                [1, 1, math.sqrt(2)]]
+            del open[c_id]
 
-startnode = graphNode(calc_xy_index(start_x, min_x), calc_xy_index(start_y, min_y),0,-1)
-goalnode = graphNode(calc_xy_index(goal_x, min_x), calc_xy_index(goal_y, min_y),0,-1)
-open[calc_index(startnode)] = startnode
+            for plus_x,plus_y,plus_cost in node_around:
+                nextnode = (current.index_x + plus_x,
+                            current.index_y + plus_y,
+                            current.cost + plus_cost,
+                            c_id)
+                n_id = self.calc_index(nextnode)
 
-while 1:
-    c_id = min(open, key=lambda o: open[o].cost)
-    current = open[c_id]
+                if n_id in close:
+                    continue
 
-    if current.index_x == goalnode.index_x and current.index_y == goalnode.index_y:
-        goalnode.cost = current.cost
-        goalnode.parent = current.parent
-        break
+                if not self.verifynode(nextnode):
+                    continue
 
-    del open[c_id]
+                if n_id not in open:
+                    open[n_id] = nextnode
+                else:
+                    if open[n_id].cost >= nextnode.cost:
+                        open[n_id] = nextnode
 
-    for plus_x,plus_y,plus_cost in node_around:
-        nextnode = (current.index_x + plus_x,
-                    current.index_y + plus_y,
-                    current.cost + plus_cost,
-                    c_id)
-        n_id = calc_index(nextnode)
+    def calc_position(self, index, minp):
+        pos = index * self.graph_resolution + minp
+        return pos
 
-        if n_id in close:
-            continue
+    def calc_xy_index(self, position, minp):
+        return round((position - minp) / self.graph_resolution)
 
-        if not verifynode(nextnode):
-            continue
+    def calc_index(self, node):
+        node = self.graphNode
+        return (node.index_y - self.area_min_y) * self.x_width + (node.index_x - self.area_min_x)
 
-        if n_id not in open:
-            open[n_id] = nextnode
-        else:
-            if open[n_id].cost >= nextnode.cost:
-                open[n_id] = nextnode
+    def verifynode(self, node):
+        if node.index_x < self.area_min_x:
+            return False
+        if node.index_y < self.area_min_y:
+            return False
+        if node.index_x > self.area_max_x:
+            return False
+        if node.index_y > self.area_max_y:
+            return False
+        if self.obstacle_map[node.index_x][node.index_y]:
+            return False
+
+        return True
+
+    def generate_obstacles(self):
+
+        for i in range(100):
+            random.seed(10)
+            self.ox.append(random.uniform(-500,500))
+            self.oy.append(random.uniform(-500,500))
+
+        return self.ox, self.oy
+
+    def generate_obstaclemap(self):
+        for ix in range(self.x_width):
+            x = self.calc_position(ix, self.area_min_x)
+            for iy in range(self.y_width):
+                y = self.calc_position(iy, self.area_min_y)
+                for iox,ioy in zip(self.ox,self.oy):
+                    d = math.hypot(iox - x, ioy - y)
+                    if d <= self.vehicle_radius:
+                        self.obstacle_map[ix][iy] = True
+                        break
+
+    def node_around(self):
+        node_around = [[1, 0, 1],
+                        [0, 1, 1],
+                        [-1, 0, 1],
+                        [0, -1, 1],
+                        [-1, -1, math.sqrt(2)],
+                        [-1, 1, math.sqrt(2)],
+                        [1, -1, math.sqrt(2)],
+                        [1, 1, math.sqrt(2)]]
+        return node_around
+
+def main():
+    print("hogehoge")
+
+
+if __name__ == '__main__':
+    main()
 
 
 
