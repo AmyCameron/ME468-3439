@@ -10,8 +10,18 @@ from ament_index_python.packages import get_package_share_directory
 import math
 import random
 
+import os
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+from scipy.integrate import odeint
+
 class Dijkstra(Node):
     def __init__(self, area_max_x, area_max_y, area_min_x, area_min_y, ox, oy, graph_resolusion, vehiclesize):
+        super().__init__('path_planning_node')
+        
         # define enviroment area
         self.area_max_x = area_max_x
         self.area_max_y = area_max_y
@@ -27,6 +37,67 @@ class Dijkstra(Node):
         self.generate_obstaclemap(ox,oy)
         # 8 nodes around node
         self.node_around = self.node_around()
+
+        # Read in share directory location
+        package_share_directory = get_package_share_directory('control_stack')
+        
+        self.declare_parameter('visualize', False)
+        self.visualize = self.get_parameter(
+            'visualize').get_parameter_value().bool_value
+
+        self.declare_parameter('path_resolution', 10.0)
+        self.path_resolution = self.get_parameter(
+            'path_resolution').get_parameter_value().double_value
+
+        ### ??? ###
+        #target location
+        self.declare_parameter('target', [350.0,350.0])
+        self.target = self.get_parameter(
+            'target').get_parameter_value().double_array_value
+
+        self.declare_parameter('save', False)
+        self.save = self.get_parameter(
+            'save').get_parameter_value().bool_value
+
+        self.declare_parameter('save_name', "planner_output")
+        self.save_name = self.get_parameter(
+            'save_name').get_parameter_value().string_value
+
+        home_dir = os.getenv('HOME')
+        save_dir = "me468_output"
+        if(not os.path.exists(os.path.join(home_dir,save_dir))):
+            os.mkdir(os.path.join(home_dir,save_dir))
+            
+        self.output_dir = os.path.join(home_dir,save_dir,self.save_name)
+        if(not os.path.exists(self.output_dir)):
+            os.mkdir(self.output_dir)
+        self.frame_number = 0
+
+        # DDS QOS Setup - important for detemining lag and packet drop behavior
+        qos_profile = QoSProfile(depth=1)
+        qos_profile.history = QoSHistoryPolicy.KEEP_LAST
+
+        # subscribers
+        self.sub_state = self.create_subscription(
+            VehicleState, 'state', self.state_callback, qos_profile)
+        self.sub_objects = self.create_subscription(
+            ObjectList, 'objects', self.objects_callback, qos_profile)
+
+        # publishers
+        self.pub_path = self.create_publisher(Path, 'path', qos_profile)
+        self.timer = self.create_timer(1/self.freq, self.pub_callback)
+
+        # visualization setup
+        if(self.visualize): # ???
+            self.fig, self.ax = plt.subplots()
+            plt.title("Path Planner")
+            self.patches = []
+            self.ax.set_xlim((-500,500))
+            self.ax.set_ylim((-500,500))
+            self.ax.set_xlabel("X [m] (Global Frame)")
+            self.ax.set_ylabel("Y [m] (Global Frame)")
+            self.path_points = None
+        ### ??? ###
 
     class graphNode:
         def __init__(self,index_x,index_y,cost,parent):
@@ -136,6 +207,21 @@ class Dijkstra(Node):
                         [1, -1, math.sqrt(2)],
                         [1, 1, math.sqrt(2)]]
         return node_around
+
+    def pub_callback(self):
+        
+        pts_x, pts_y = self.planning(sx, sy, gx, gy)
+        msg = Path()
+
+        for ix,iy in pts_x,pts_y:
+            pt = PoseStamped()
+            pt.pose.position.x = ix
+            pt.pose.position.y = iy
+            msg.poses.append(pt)
+        
+        self.pub_path.publish(msg)
+
+
 
 def main():
     print("hogehoge")
