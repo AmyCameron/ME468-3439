@@ -1,7 +1,7 @@
 import math
 import random
 
-class Dijkstra:
+class Astar:
     def __init__(self, area_max_x, area_max_y, area_min_x, area_min_y, ox, oy, graph_resolusion, vehiclesize):
         # define enviroment area
         self.area_max_x = area_max_x
@@ -148,8 +148,8 @@ def main():
         ox.append(random.uniform(-500,500))
         oy.append(random.uniform(-500,500))
 
-    dijkstra = Dijkstra(area_max_x, area_max_y, area_min_x, area_min_y, ox, oy, graph_resolosion, vehiclesize)
-    rx, ry = dijkstra.planning(sx, sy, gx, gy)
+    astar = Astar(area_max_x, area_max_y, area_min_x, area_min_y, ox, oy, graph_resolosion, vehiclesize)
+    rx, ry = astar.planning(sx, sy, gx, gy)
 
     print(rx)
     print(ry)
