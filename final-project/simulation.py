@@ -233,6 +233,7 @@ class SimulationNode(Node):
         # Create and initialize the powertrain system
         powertrain = veh.ShaftsPowertrain(powertrain_file)
         self.vehicle.InitializePowertrain(powertrain)
+        powertrain.SetDriveMode(veh.ChPowertrain.DriveMode_REVERSE)
 
         # Create and initialize the tires
         for axle in self.vehicle.GetAxles():

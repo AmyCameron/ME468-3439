@@ -1,7 +1,16 @@
+import rclpy
+from rclpy.node import Node
+from rclpy.qos import QoSHistoryPolicy, QoSProfile
+from custom_msgs.msg import VehicleState, ObjectList, Object
+from geometry_msgs.msg import PoseStamped
+from nav_msgs.msg import Path
+
+from ament_index_python.packages import get_package_share_directory
+
 import math
 import random
 
-class Astar:
+class Dijkstra(Node):
     def __init__(self, area_max_x, area_max_y, area_min_x, area_min_y, ox, oy, graph_resolusion, vehiclesize):
         # define enviroment area
         self.area_max_x = area_max_x
@@ -148,8 +157,8 @@ def main():
         ox.append(random.uniform(-500,500))
         oy.append(random.uniform(-500,500))
 
-    astar = Astar(area_max_x, area_max_y, area_min_x, area_min_y, ox, oy, graph_resolosion, vehiclesize)
-    rx, ry = astar.planning(sx, sy, gx, gy)
+    dijkstra = Dijkstra(area_max_x, area_max_y, area_min_x, area_min_y, ox, oy, graph_resolosion, vehiclesize)
+    rx, ry = dijkstra.planning(sx, sy, gx, gy)
 
     print(rx)
     print(ry)
