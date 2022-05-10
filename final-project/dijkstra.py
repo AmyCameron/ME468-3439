@@ -1,5 +1,9 @@
 import math
 import random
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+import csv
 
 class Dijkstra:
     def __init__(self, area_max_x, area_max_y, area_min_x, area_min_y, ox, oy, graph_resolusion, vehiclesize):
@@ -11,9 +15,9 @@ class Dijkstra:
         # scaling
         self.graph_resolution = graph_resolusion
         self.vehiclesize = vehiclesize
-        # obstable map
         self.x_width = None
         self.y_width = None
+        # obstable map
         self.obstacle_map = []
         self.generate_obstaclemap(ox,oy)
         # 8 nodes around node
@@ -45,7 +49,6 @@ class Dijkstra:
                 break
 
             del open[c_id]
-
             close[c_id] = current
 
             for plus_x,plus_y,plus_cost in self.node_around:
@@ -82,6 +85,9 @@ class Dijkstra:
         pos = index * self.graph_resolution + minp
         return pos
 
+    def calc_index(self, node):
+        return (node.index_y - self.area_min_y) * self.x_width + (node.index_x - self.area_min_x)
+
     def calc_xy_index(self, position, minp):
         return round((position - minp) / self.graph_resolution)
 
@@ -99,8 +105,6 @@ class Dijkstra:
 
         return True
 
-    def calc_index(self, node):
-        return (node.index_y - self.area_min_y) * self.x_width + (node.index_x - self.area_min_x)
 
     def generate_obstaclemap(self, ox, oy):
         self.x_width = round((self.area_max_x - self.area_min_x ) / self.graph_resolution)
@@ -129,30 +133,178 @@ class Dijkstra:
         return node_around
 
 def main():
-    print("hogehoge")
 
-    sx = 0.0
-    sy = 0.0
-    gx = 250.0 
-    gy = 70.0
+    sx = 20.0
+    sy = 4.0
+    gx = 9.2 
+    gy = 1.0
 
-    graph_resolosion = 10
-    vehiclesize = 50
+    graph_resolosion = 2
+    vehiclesize = 1.5
 
-    area_min_x, area_max_x = -500, 500
-    area_min_y, area_max_y = -500, 500
+    area_min_x, area_max_x = 0, 200
+    area_min_y, area_max_y = 0, 200
     
     ox, oy = [], []
-    for i in range(100):
-        random.seed(10)
-        ox.append(random.uniform(-500,500))
-        oy.append(random.uniform(-500,500))
+    #for i in range(150):
+        # random.seed(50)
+     #   ox.append(random.randint(area_min_x,area_max_x))
+    #  oy.append(random.randint(area_min_y,area_max_y))
+
+    ox = [0.00E+00,
+            2.00E-01,
+            1.20E+00,
+            2.20E+00,
+            3.20E+00,
+            4.20E+00,
+            5.20E+00,
+            0.00E+00,
+            2.00E-01,
+            1.20E+00,
+            2.20E+00,
+            3.20E+00,
+            4.20E+00,
+            5.20E+00,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5.20E+00,
+            5.20E+00,
+            5.20E+00,
+            5.20E+00,
+            5.20E+00,
+            1.32E+01,
+            1.42E+01,
+            1.52E+01,
+            1.62E+01,
+            1.72E+01,
+            1.82E+01,
+            1.92E+01,
+            1.32E+01,
+            1.42E+01,
+            1.52E+01,
+            1.62E+01,
+            1.72E+01,
+            1.82E+01,
+            1.92E+01,
+            1.32E+01,
+            1.32E+01,
+            1.32E+01,
+            1.32E+01,
+            1.32E+01,
+            1.82E+01,
+            1.92E+01,
+            1.92E+01,
+            1.92E+01,
+            1.92E+01,
+            0.00E+00,
+            1.00E+00,
+            2.00E+00,
+            3.00E+00,
+            4.00E+00,
+            5.00E+00,
+            6.00E+00,
+            7.00E+00,
+            8.00E+00,
+            9.00E+00,
+            1.00E+01,
+            1.10E+01,
+            1.20E+01,
+            1.30E+01,
+            1.40E+01,
+            1.50E+01,
+            1.60E+01,
+            1.70E+01,
+            1.80E+01,
+            1.90E+01,
+            2.00E+01]
+    oy = [0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            0.00E+00,
+            5.00E-01,
+            1.00E+00,
+            1.50E+00,
+            2.00E+00,
+            0.00E+00,
+            5.00E-01,
+            1.00E+00,
+            1.50E+00,
+            2.00E+00,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            2.00E+00,
+            0.00E+00,
+            5.00E-01,
+            1.00E+00,
+            1.50E+00,
+            2.00E+00,
+            0.00E+00,
+            5.00E-01,
+            1.00E+00,
+            1.50E+00,
+            2.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00,
+            6.00E+00]
 
     dijkstra = Dijkstra(area_max_x, area_max_y, area_min_x, area_min_y, ox, oy, graph_resolosion, vehiclesize)
     rx, ry = dijkstra.planning(sx, sy, gx, gy)
 
     print(rx)
     print(ry)
+    print(ox)
+    print(oy)
+
+    fig = plt.figure(figsize=(8, 6))
+
+    plt.plot(rx, ry,label='result')
+    plt.scatter(ox, oy,label='obstacle')
+    plt.legend()
+    plt.title("Dijkstra",fontsize=12)
+    plt.show()
 
 if __name__ == '__main__':
     main()
